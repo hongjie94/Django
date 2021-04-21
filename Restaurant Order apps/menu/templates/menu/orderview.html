@@ -1,0 +1,114 @@
+{% extends "menu/base.html" %}
+{% load static %}
+
+{% block body %}
+
+
+
+<body class="bg-light" onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
+
+ <div style="display:none;" id="myDiv" class="animate-bottom">
+     <main class="container" style="margin-top: 5em; padding-bottom: 5em;">
+
+
+    <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <h6 class="border-bottom pb-2 mb-0">You have {% if carts|length == 1 %}<b>{{carts|length}}</b> ITEM
+            {% else %} <b>{{carts|length}}</b>
+            ITEMS{% endif %} item in your cart </h6>
+
+        <div class="d-flex pt-3">
+
+            <div style="width: 100%">
+                <h2 style="text-align: center;">
+                    <i class="fa" style="padding-top: 7px;
+                                    font-size: 1em;">&#xf07a;</i>
+                    <span class='badge badge-warning' id='lblCartCount'>{{carts|length}}</span>Your Cart
+                </h2>
+                <p style="text-align: center;"> Signed in as<b> {{request.user.username |capfirst}}</b>.</p>
+                <hr>
+                <div id="adding_box">
+                    {% if not carts %}
+                    <p>Your shopping cart is currently empty...</p>
+                    {% endif %}
+                    {% for cart in carts %}
+
+                    <div class="added_item">
+                        <p><i class='fas fa-times x' onclick="deleteCart('{{ cart.id }}')">
+                                {% if cart.item_size == " " %}
+                            </i> {{cart.quantity}} {{cart.item_name}} {{cart.item_size}}</p>
+                        {% else %}
+                        </i> {{cart.quantity}} {{cart.item_name}} ({{cart.item_size}})</p>
+                        {% endif %}
+                        <p>${{cart.total}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <hr>
+                <div class="calculation">
+                    <div class="st_div">
+                        <p>Sub Total:</p>
+                        <p id="stt">{% if check.sub_total == 0 %}$ 0.00 {% else %} ${{check.sub_total}}{% endif %}
+                        </p>
+                    </div>
+
+                    <div class="tax_div">
+                        <p>Tax:</p>
+                        <p id="tax">${{check.tax}}</p>
+                    </div>
+
+                    <div class="total_div">
+                        <p>Total:</p>
+                        <p id="t_t">${{check.final_total}}</p>
+                    </div>
+                </div>
+                <input id="submit_order" onclick="placeOrder('{{ request.user.username }}')" class="btn btn-primary sub_b" style="width: -webkit-fill-available;
+                         background-color: gray;
+                         border-color: gray;
+                         margin-top: 1em;" type="submit" value="Place Order">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <h6 class="border-bottom pb-2 mb-0">Order History</h6>
+        {% for order in orders %}
+        <div class="d-flex text-muted pt-3">
+            <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                <div class="d-flex justify-content-between">
+                    <strong class="text-gray-dark">ORDER #{{order.order_num}}</strong>
+                     <span style="color:gray; cursor: default;"> Total ${{order.order_total}}</span>
+                    <a href="{% url 'order_detail' order.order_num %}">Details</a>
+                </div>
+                <span style="color:gray; cursor: default;">{{order.order_time}}</span>
+            </div>
+
+        </div>
+        {% endfor %}
+
+
+    </div>
+    </main>
+ </div>
+
+<script>
+    var myVar;
+
+    function myFunction() {
+        myVar = setTimeout(showPage, 500);
+    }
+
+    function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+    }
+</script>
+
+
+<script src="{% static 'menu/delete_cart.js' %}"></script>
+<script src="{% static 'menu/place_order.js' %}"></script>
+
+    {% endblock %}

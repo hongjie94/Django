@@ -1,0 +1,168 @@
+textarea {
+    min-height: 400px;
+}
+
+/* title */
+.z_mail {
+    box-shadow: 5px 20px 50px -5px #1d2124;
+    color: black;
+    border-radius: 1.1rem;
+    font-weight: 500;
+    font-family: Tsukushi A Round Gothic;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    width: 175px;
+    background-color: #FFD200;
+    margin: 50px;
+    padding: 5px;
+    text-align: center;
+}
+
+
+/* center button */
+.mb {
+    text-align: center;
+}
+
+
+/* center login/register text */
+.mt {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* login/register box */
+.home_box {
+
+    max-width: 285px;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* login/register bottom text */
+.bt {
+    background-color: #FFD200;
+    border-radius: 0.5em;
+    margin-top: 10px;
+    padding: 2px;
+    width: max-content;
+}
+
+
+/* login/register page button */
+.btn-primary {
+color: black;
+background-color: #FFD600;
+border-color: #FFD600;
+width: 40%;
+}
+
+
+/* all buttons hover color */
+.btn:hover {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+
+/* button click color */
+.btn-outline-primary:active {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+
+/* button in inbox page color */
+.btn-outline-primary {
+    color: black;
+    border-color: #F29000;
+    background-color: #F29000;
+}
+
+.c {
+    color: black;
+    border-color: #F29000;
+    background-color: #F29000;
+}
+
+/* link color */
+a {
+  color: #a36000;
+}
+
+
+/* margin for nav button in inbox page */
+.margin {
+    margin-right: 5px;
+}
+
+
+/* mouse over link color*/
+a:hover {
+  color: #a38400;
+}
+
+
+/* selected link color */
+a:active {
+  color: white;
+}
+
+.mail {
+    display: flex;
+    flex-wrap: wrap;    
+    align-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    height: 40px; 
+    padding: 0px 15px; 
+}
+
+ .sender {
+    flex-basis: 30%;
+    flex: 1;
+    order: 2;
+    margin: 0;
+    padding-right: 20px;
+}
+
+.recipients {
+    flex-basis: 20%;
+    flex: 1;
+    order: 3;
+    margin: 0;     
+} 
+
+.subject {  
+    flex-basis: 20%;
+    flex: 1;
+    order: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    padding-right: 20px;
+}
+
+.time {
+    flex: 1;
+    order: 4;
+    flex-basis: 10%;
+    margin: 0;  
+    text-align: end;
+} 
+
+.margin_ab {
+    margin-bottom: 13px;
+}
+
+.margin_rp {
+    margin: 0 auto;
+    display: block;
+}

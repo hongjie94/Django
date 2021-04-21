@@ -1,0 +1,61 @@
+{% extends "menu/owner.html" %}
+{% load static %}
+
+{% block body %}
+
+<main class="container" style="margin-top: 5em; padding-bottom: 5em;">
+            <div class=" d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+                <div class=" lh-1">
+                    <h1 class="h2 mb-0 lh-1" style="color: black;">Order Details</h1>
+                </div>
+            </div>
+
+
+     <div class="my-3 p-3 bg-white rounded shadow-sm">
+         {% for order in orders %}
+            <div class="calculation" style="margin-top: 1em;">
+                <div class="st_div">
+                    <h6 style="margin-left: 15px;"> ORDER # {{order.order_num}} </h6>
+                    <p>{{ order.order_time}}</p>
+                </div>
+                <h5 style="margin: 0px; padding-left: 15px">{{ order.status}}</h5>
+            </div>
+        {% endfor %}
+
+        <div class="p-3 bg-white rounded shadow-sm">
+        <h6 class="border-bottom pb-2 mb-0"></h6>
+         {% for cart in carts %}
+            <div class="d-flex text-muted pt-3">
+                <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                    <div class="d-flex justify-content-between">
+                        <strong class="text-gray-dark">{{cart.quantity}}  {{cart.item_name}} {{cart.item_size}}</strong>
+                       <p> ${{cart.total}}</p>
+                    </div>
+                    <span class="d-block"> </span>
+                </div>
+            </div>
+       {% endfor %}
+            {% for order in orders %}
+            <div class="calculation" style="margin-top: 1em;">
+                <div class="st_div">
+                    <p>Sub Total:</p>
+                    <p id="stt">
+                        $ {{order.order_sub}}
+                    </p>
+                </div>
+
+                <div class="tax_div">
+                    <p>Tax:</p>
+                    <p id="tax">$ {{order.order_tax}}</p>
+                </div>
+
+                <div class="total_div">
+                    <p>Total:</p>
+                    <p id="t_t">$ {{order.order_total}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </main>
+
+{% endblock %}

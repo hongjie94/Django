@@ -1,0 +1,70 @@
+{% extends "menu/base.html" %}
+{% load static %}
+
+{% block bg %}
+<style>
+    body {
+        background-color: black;
+    }
+</style>
+{% endblock %}
+{% block nav %}
+
+{% endblock %}
+{% block body %}
+
+<div class="main">
+
+    <div class="vedio">
+        <video id="vbg" poster="{% static 'background/bgf.png' %}" autoplay muted loop>
+            <source src="{% static 'background/bg.mp4' %}" type="video/mp4">
+        </video>
+
+        <div class="images">
+            <div class="w3-content section">
+                <img class="mySlides w3-animate-fading c_img" src="{% static 'image/menu_image/beef/pswo.jpg' %}">
+                <img class="mySlides w3-animate-fading c_img"
+                    src="{% static 'image/menu_image/specil_cantonese/shf.jpg' %}">
+                <img class="mySlides w3-animate-fading c_img"
+                    src="{% static 'image/menu_image/specil_cantonese/lmc.jpg' %}">
+                <img class="mySlides w3-animate-fading c_img" src="{% static 'image/menu_image/sweet_sour/sssc.jpeg'%}">
+            </div>
+        </div>
+
+        <div class="text_div">
+            <h1>NEW CHINA</h1>
+            <h5>Chinese Food To Take Out & Eat In</h5>
+
+            <h4 style="margin: 0.5em 0px"><a id="mlink" href="{% url 'menu' %}"> VIEW OUR MENU</a></h4>
+
+            <!-- <h4> Tel: (518) 673-8292 </h4> -->
+            <!-- <h4 class="phone"> (518) 673-2380 </h4> -->
+            <div class="hours" style="font-weight: 200;">
+                <h3>Open Hours </h3>
+                <h4>MON-SAT: 11:00 AM - 10:00 PM</h4>
+                <h4> Sunday: 12:00 Noon- 9:30 PM </h4>
+                 <h4> Tel: (518) 000-0000 </h4>
+                <h4 class="phone"> (518) 000-0000</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) { myIndex = 1 }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 8000);
+    } 
+</script>
+
+{% endblock %}

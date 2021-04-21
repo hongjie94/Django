@@ -1,0 +1,139 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+{% if user.is_authenticated %}
+
+<style>
+    body {
+        background-image: url(../static/img/s8.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        width: 100%;
+        height: auto;
+    }
+</style>
+
+{% if message %}
+<div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <h6>{{ message }}</h6>
+</div>
+{% endif %}
+<div class="p_head p_h">
+    <h1>Latest Posts</h1>
+</div>  
+    {% for post in page.object_list %}
+    <div class="post_box">
+        <div class="post">
+            
+            <div id="post_{{post.id}}">{{ post.content }}</div>
+            <hr style="margin: 0.5em 0px 0px 0px;border-top: 2px solid black;color: black;">
+            <textarea class="form-control"  id="edit_{{post.id}}" name="edit" style="display:none; margin: 0.5em 0px 0px 0px; "></textarea>
+            {% if user.id == post.user.id %}
+            <div id="edit" onclick="edit('{{ post.id }}')" ><span class="edit_span">✏️Edit</span></div>
+            {% endif %}
+            <button id="edit_b{{post.id}}" class="btn btn-primary" style="display:none; background-color: #0E0E0E;
+                                                                            border-color: #0E0E0E;
+                                                                            margin: 1em 0px;">Save</button>
+            <span> <a class="r_a" href= "{% url 'profile' post.user.id %}"> 📝{{post.user}}</a></span>
+            <span id="like{{post.id}}"
+                 class="fa fa-heart"
+                 style="font-size:20px;
+                 {% if post.number_likes is 0 %}
+                  color: gray;
+                 {% else%}
+                  color: red;
+                 {% endif %}
+                 background-color: transparent;
+                 border-style: unset;"
+                 onclick="like('{{ post.id }}')"></span>
+
+            <div id="like_count{{post.id}}" style="display: inline-block;">{{ post.number_likes }}</div>
+            <span style="float: right;">{{post.time_posted}}&nbsp;&nbsp;</span>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+    {% if page.has_previous or page.has_next %}
+    <div class="pagination a_p">
+
+        {% if page.has_next and not page.has_previous %}
+            <p style="color: #4AC3E0; align-self: center;margin: 0px auto;"> Click next to view more</p>
+        {% endif %}
+
+        {% if not page.has_next and page.has_previous %}
+            <p style="color: #4AC3E0; align-self: center;margin: 0px auto;">You have reach the end of the page</p>
+        {% endif %}
+
+        
+        {% if page.has_previous %}
+            <a class="al" href="{% url 'all_post'%}?page={{ page.previous_page_number}}">⬅️ Previous</a>
+        {% endif %}
+
+
+        {% if page.has_next %}
+            <a class="al" href="{% url 'all_post' %}?page={{ page.next_page_number}}">Next Page ➡️</a>
+        {% endif %}
+    </div>
+
+    {%else%}
+     <div style="margin-bottom: 8em;"> </div>
+    {% endif %}
+
+{% else %}
+
+    <div class="flex_box">
+        <div class="box_1">
+            <div class="w3-content section">
+                <img class="mySlides w3-animate-fading c_img" src="../static/img/s3.jpg">
+                <img class="mySlides w3-animate-fading c_img" src="../static/img/s5.jpg">
+                <img class="mySlides w3-animate-fading c_img" src="../static/img/s1.jpg"> 
+                <img class="mySlides w3-animate-fading c_img" src="../static/img/s2.jpg"> 
+                <!-- <img class="mySlides w3-animate-fading c_img" src="../static/img/s7.jpg">   -->
+            </div>
+        </div>
+
+        <div class="box_2">
+
+            <h1 class="p_head">Register and Join The Conversation Today !</h1>
+
+            <div class="button">
+                <form action="{% url 'login' %}">
+                    <button class="ln_button b_b"> LOGIN</button>
+                </form>
+                <form action="{% url 'register' %}">
+                    <button class="ln_button b_a"> REGISTER</button>
+                </form>
+            </div>
+
+        </div>
+    </div>    
+
+{% endif %}
+                
+<script>
+  var myIndex = 0;
+  carousel();
+  
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 9000);    
+  }
+</script>
+{% endblock %}
+
+{% block footer %}  
+<div class="index_footer">
+{% endblock %}

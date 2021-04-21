@@ -1,0 +1,93 @@
+{% extends "network/layout.html" %}
+
+{% block bg %}
+<style>
+    body {
+        background-image: url(../static/img/s8.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        width: 100%;
+        height: auto;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+{% if message %}
+<div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <h6>{{ message }}</h6>
+  </div>
+{% endif %}
+
+<div class="p_head p_h">
+    <h1>Latest Posts</h1>
+</div>  
+
+<div class="all_post_div">
+    {% for post in page.object_list %}
+    <div class="post_box">
+        <div class="post">
+            <div id="post_{{post.id}}">{{ post.content }}</div>
+            <hr style="margin: 0.5em 0px 0px 0px;border-top: 2px solid black;color: black;">
+            <textarea class="form-control"  id="edit_{{post.id}}" name="edit" style="display:none; margin: 0.5em 0px 0px 0px; "></textarea>
+            {% if user.id == post.user.id %}
+            <div id="edit" onclick="edit('{{ post.id }}')" ><span class="edit_span">✏️Edit</span></div>
+            {% endif %}
+            <button id="edit_b{{post.id}}" class="btn btn-primary" style="display:none; background-color: #0E0E0E;
+                                                                            border-color: #0E0E0E;
+                                                                            margin: 1em 0px;">Save</button>
+            <span> <a class="r_a" href= "{% url 'profile' post.user.id %}"> 📝{{post.user}}</a></span>
+
+            <span id="like{{post.id}}"
+                 class="fa fa-heart"
+                 style="font-size:20px;
+                 {% if post.number_likes is 0 %}
+                  color: gray;
+                 {% else%}
+                  color: red;
+                 {% endif %}
+                 background-color: transparent;
+                 border-style: unset;"
+                 onclick="like('{{ post.id }}')"></span>
+
+            <div id="like_count{{post.id}}" style="display: inline-block;">{{ post.number_likes }}</div>
+            <span style="float: right;">{{post.time_posted}}&nbsp;&nbsp;</span>
+
+          
+        </div>
+    </div>
+    {% endfor %}
+
+    {% if page.has_previous or page.has_next %}
+    <div class="pagination a_p">
+
+            {% if page.has_next and not page.has_previous %}
+                <p style="color: white; align-self: center;margin: 0px auto;"> Click next to view more</p>
+            {% endif %}
+
+            {% if not page.has_next and page.has_previous %}
+                <p style="color: white; align-self: center;margin: 0px auto;">You have reach the end of the page</p>
+            {% endif %}
+
+            {% if page.has_previous %}
+                <a class="al" href="{% url 'all_post'%}?page={{ page.previous_page_number}}"> ⬅️ Previous page</a>
+            {% endif %}
+
+            {% if page.has_next %}
+                <a class="al"  href="{% url 'all_post' %}?page={{ page.next_page_number}}">Next page ➡️ </a>
+            {% endif %}
+    </div>
+    {%else%}
+     <div style="margin-bottom: 8em;"> </div>
+    {% endif %} 
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<div class="index_footer">
+{% endblock %}

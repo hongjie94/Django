@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Social Network{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'network/style.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="{% static 'network/script.js' %}"></script>
+    </head>
+    {% block bg %}
+    <style>
+        body {
+            background-color: #4AC3E0;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    {% endblock %}
+    <body>
+          <!-- Bootstrap Script-->
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="logo_nav" href="{% url 'index' %}">Network</a>
+            <div class="nav_flex">
+              <ul class="navbar-nav mr-auto">
+              
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="c_nav" href="{% url 'personal' %}"><strong>{{ user.username }}</strong></a>
+                </li>
+            
+                  <li class="nav-item">
+                        <a class="c_nav" href="{% url 'add_post' %}"> Post </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="c_nav" href="{% url 'following_view' %}">Following</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="c_nav l_out" href="{% url 'logout' %}">Log Out</a>
+                    </li>
+                {% else %}
+                
+                  <li class="nav-item">
+                    <a class="c_nav" href="{% url 'all_post' %}">all Posts</a>
+                  </li>
+
+                    <li class="nav-item">
+                        <a class="c_nav l_in" href="{% url 'login' %}">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="c_nav l_out" href="{% url 'register' %}">Register</a>
+                    </li>
+            {% endif %}
+            </div>
+          </nav>
+
+        <div class="body">
+            {% block body %}
+            {% endblock %}
+        </div>
+        
+
+    </body>
+
+    {% block footer %}  
+    {% endblock %}
+        <footer> 
+            {% if user.is_authenticated %}
+                <div class="bot_nav">
+                    <a class="b_n" href="{% url 'all_post' %}">All Post</a>
+                    <a class="b_n" href="{% url 'add_post' %}"> New Post </a>
+                    <a class="b_n"  href="{% url 'following_view' %}">Following</a>
+                    <a class="b_n"  href="{% url 'logout' %}">Log Out</a>
+                </div>
+            {% else %}
+                <p>Social Network-  Click here to <a class="c_nav" href="{% url 'login' %}">Login</a></p>
+            {% endif %}    
+        </footer>
+    </div>
+</html>

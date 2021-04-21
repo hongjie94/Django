@@ -1,0 +1,58 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+{% block bg %}
+
+<style>
+        body {
+            background-image: url("{% static 'images/2.jpg' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: 50% 50%;
+            background-size: cover;    
+        }
+</style>
+
+{% endblock %}
+
+{% block body %}
+    <h2 style="margin-top: 20px;">{{ request.user.email |capfirst}}</h2>
+
+        <button class="btn btn-sm btn-outline-primary margin" id="inbox">Inbox</button>
+        <button class="btn btn-sm btn-outline-primary margin" id="compose">Compose</button>
+        <button class="btn btn-sm btn-outline-primary margin" id="sent">Sent</button>
+        <button class="btn btn-sm btn-outline-primary margin" id="archived">Archived</button>
+        <div style="float: right; bottom: 0;"><a class="btn btn-sm btn-outline-primary" href="{% url 'logout' %}">Log Out</a></div>
+
+    <hr>
+
+    <div id="emails-view">
+    </div>
+
+    <div id = "view_mails">
+    </div>
+
+    <div id="compose-view">
+        <h3>New Email</h3>
+        <form id="compose-form">
+            <div class="form-group">
+                From: <input disabled class="form-control" value="{{ request.user.email }}">
+            </div>
+            <div class="form-group">
+                To: <input id="compose-recipients" class="form-control">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="compose-subject" placeholder="Subject">
+            </div>
+            <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+            <div style="text-align: center; margin-top: 10px;"><input type="submit" class="btn btn-primary c"/></div>
+            <div style="margin-top: 20px;"></div>
+        </form>
+    </div>
+
+
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'mail/inbox.js' %}"></script>
+{% endblock %}

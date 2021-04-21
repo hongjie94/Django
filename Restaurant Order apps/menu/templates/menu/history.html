@@ -1,0 +1,46 @@
+{% extends "menu/base.html" %}
+{% load static %}
+
+{% block body %}
+<body class="bg-light" onload="myFunction()" style="margin:0;">
+   <div id="loader"></div>
+
+
+    <div style="display:block;" id="myDiv" class="animate-bottom">
+        <div class="content" style="margin-top:5em;">
+            <div class=" d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+                <div class=" lh-1">
+                    <h1 class="h2 mb-0 lh-1" style="color: black;">My Order Status</h1>
+                    </div>
+            </div>
+
+             {% for order in orders %}
+                <div id="orders">
+
+                    <div id="on">
+                        <p>ORDER #{{order.order_num}}  &nbsp;&nbsp; Total ${{order.order_total}}
+                         &nbsp; &nbsp; </p>
+                        <h6>Order Status: {{order.status}}</h6>
+                    </div>
+                    <div id="ott">
+                         <p>{{order.order_time}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+   <script>
+        var myVar;
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 500);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "menu/owner.html" %}
+{% load static %}
+
+{% block body %}
+
+<div class="content" style="margin-top:5em;">
+    <div class=" d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+        <div class=" lh-1">
+            <h1 class="h2 mb-0 lh-1" style="color: black;">Order Canceled</h1>
+        </div>
+    </div>
+</div>
+
+<div class="guest">
+    {% for order in orders%}
+    <div class="boxes">
+        <p style="text-align: center;
+                text-decoration: underline;
+                 text-transform: uppercase;
+                    margin: 0px;"> ORDER #<b> {{order.order_num}}</b>.</p>
+
+         <p style="text-align: center;
+          text-transform: uppercase;">
+             {{order.order_time}}</b>.</p>
+        <hr>
+        <div id="adding_box">
+            <h5 style="text-align: center;">Status: <b>CANCELED</b></h5>
+        </div>
+        <hr>
+        <div class="calculation">
+            <div class="st_div">
+                <span style="color: black;cursor: unset">Sub Total:</span>
+                <p id="stt">{{order.order_sub}}</p>
+            </div>
+            <div class="tax_div">
+                <span style="color: black;cursor: unset">Tax:</span>
+                <p id="tax">${{order.order_tax}}</p>
+            </div>
+            <div class="total_div">
+                <span style="color: black;
+                        cursor: unset">Total: </span>
+                <p id="t_t">${{order.order_total}}</p>
+            </div>
+        </div>
+        <hr>
+        <a href="{% url 'owner_detail' order.order_num %}">
+            <input class="btn btn-primary sub_b"
+                   style="width:100%;
+                    background-color: gray;
+                    border-color: gray;
+                    margin-top: 1em;"
+                   type="submit"
+                   value="View Detail"></a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,1718 @@
+{% extends "menu/base.html" %}
+{% load static %}
+{% block body %}
+
+<body onload="myFunction()" style="margin:0;">
+
+    <div id="loader"></div>
+
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+        <div id="menu">
+            <div class="menu_left">
+                <div class="catagory">
+
+                    <div class="head_bar">
+                    </div>
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/appetizers/pupu_p.jpg" alt="Appetizers">
+                        <a href="#head_bar"><span id="appetizers">Appetizers</span></a>
+                    </div>
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/soups/ws2.jpg" alt="Soups">
+                        <a href="#head_bar"><span id="soups">Soups</span></a>
+                    </div>
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/chow_mein/scm.jpg" alt="Chow Mein">
+                        <a href="#head_bar"><span id="chow_mein">Chow Mein</span></a>
+                    </div>
+
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/chop_suey/ccss.jpg" alt="Chop Suey">
+                        <a href="#head_bar"><span id="chop_suey">Chop Suey</span></a>
+                    </div>
+
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/friedrice/bfr.jpg" alt="Fried rice">
+                        <a href="#head_bar"><a href="#head_bar"><span id="fr">Fried Rice</span></a>
+                    </div>
+
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/lo_mein/clm.jpg" alt="lo mein">
+                        <a href="#head_bar"><span id="lo_mein">Lo Mein</span></a>
+                    </div>
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/beef/bv.jpg" alt="Beef and Vegetable">
+                        <a href="#head_bar"><span id="beef">Beef</span></a>
+                    </div>
+
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/pork/pnb.jpg" alt="Pork">
+                        <a href="#head_bar"><span id="pork">Pork</span></a>
+                    </div>
+
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/chicken/cmv.jpg" alt="Chicken">
+                        <a href="#head_bar"><span id="chicken">Chicken</span></a>
+                    </div>
+
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/seafood/sv.jpg" alt="Seafood">
+                        <a href="#head_bar"><span id="seafood">Seafood</span></a>
+                    </div>
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/sweet_sour/ssc.jpg" alt="Ss chicken">
+                        <a href="#head_bar"><span id="s_s">Sweet & Sour</span></a>
+                    </div>
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/vegetable/xv.jpg" alt="Vegetable">
+                        <a href="#head_bar"><span id="vegetable">Vegetable Dishes</span></a>
+                    </div>
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/chowfun_ricenoddle/vcf.jpg" alt="chow fun">
+                        <a href="#head_bar"><span id="chow_fun">Chow Fun or Rice Noodles</span></a>
+                    </div>
+
+                    <div id="specil1" class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/specil_cantonese/shf.jpg" alt="happy family">
+                        <a href="#head_bar"><span id="canton">Cantonese Dishes</span></a>
+                    </div>
+
+                    <div id="specil2" class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/specil_szechuan/ssc.jpg"
+                            alt="dragon and phoenix">
+                        <a href="#head_bar"><span id="hunan">Szechuan & Hunan Dishes</span></a>
+                    </div>
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/egg_foo_yong/efy.jpg" alt="egg foo young">
+                        <a href="#head_bar"><span id="efy">Egg Foo Young</span></a>
+                    </div>
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/suggestions/sns.jpg" alt="suggestions">
+                        <a href="#head_bar"><span id="suggestions">Suggestions</span></a>
+                    </div>
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/combination_plates/occ.jpg" alt="cp">
+                        <a href="#head_bar"><span id="combo">Combination Plates</span></a>
+                    </div>
+
+                    <div class="catagory_item">
+                        <img class="ls_img" src="./static/image/menu_image/side_order/wr.jpg" alt="Side">
+                        <a href="#head_bar"><span id="side">Side Order</span></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="menu_center">
+
+                <div id="view_top">
+                    <div class="moile_item">
+                        <p id="appetizers_m">Appetizers</p>
+                    </div>
+
+                    <div class="moile_item">
+                        <p id="soups_m">Soups</p>
+                    </div>
+
+                    <div class="moile_item">
+                        <p id="chow_mein_m">Chow Mein</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="chop_suey_m">Chop Suey</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="fr_m">Fried Rice</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="lo_mein_m">Lo Mein</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="beef_m">Beef</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="pork_m">Pork</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="chicken_m">Chicken</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="seafood_m">Seafood</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="s_s_m">Sweet & Sour</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="vegetable_m">Vegetable Dishes</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="chow_fun_m">Chow Fun or Rice Noodles</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="canton_m">Cantonese Dishes</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="hunan_m">Szechuan & Hunan Dishes</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="efy_m">Egg Foo Young</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="suggestions_m">Suggestions</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="combo_m">Combination Plates</p>
+                    </div>
+                    <div class="moile_item">
+                        <p id="side_m">Side Order</p>
+                    </div>
+                </div>
+                {% if user.is_authenticated %}
+                <div id="top" style="display:none;">
+                    <div id="item_name">
+
+                        <div class="item_box">
+                            <h3 id="oap_num_name"></h3>
+                        </div>
+
+                        <div id="combo_c1" style="display: none;">
+                            <select name="combo-c1" id="combo1" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="Chicken Chow Mein(Combo)">Chicken Chow Mein</option>
+                                <option value="Roast Pork Chow Mein(Combo)">Roast Pork Chow Mein</option>
+                            </select>
+                        </div>
+
+                        <div id="combo_c2" style="display: none;">
+                            <select name="combo-c2" id="combo2" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="Beef Chow Mein(Combo)">Beef Chow Mein</option>
+                                <option value="Shrimp Chow Mein(Combo)">Shrimp Chow Mein</option>
+                            </select>
+                        </div>
+
+                        <div id="combo_c4" style="display: none;">
+                            <select name="combo-c4" id="combo3" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="Chicken w. Chinese Vegetable(Combo)">Chicken w. Chinese Vegetable
+                                </option>
+                                <option value="Roast Pork w.Chinese Vegetable(Combo)">Roast Pork w. Chinese Vegetable
+                                </option>
+                            </select>
+                        </div>
+
+                        <div id="combo_c5" style="display: none;">
+                            <select name="combo-c5" id="combo5" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="Chicken w.Broccoli(Combo)">Chicken w.Broccoli</option>
+                                <option value="Roast Pork w.Broccoli(Combo)">Roast Pork w.Broccoli</option>
+                            </select>
+                        </div>
+
+                        <div id="combo_c7" style="display: none;">
+                            <select name="combo-c7" id="combo7" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="Chicken w.Mushroom(Combo)">Chicken w.Mushroom</option>
+                                <option value="Roast Pork w.Mushroom(Combo)">Roast Pork w.Mushroom</option>
+                            </select>
+                        </div>
+
+                        <div id="combo_c8" style="display: none;">
+                            <select name="combo-c8" id="combo8" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="Sweet & Sour Chicken(Combo)">Sweet & Sour Chicken</option>
+                                <option value="Sweet & Sour Pork(Combo)">Sweet & Sour Pork</option>
+                            </select>
+                        </div>
+
+                        <div id="combo_c10" style="display: none;">
+                            <select name="combo-c10" id="combo10" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="Chicken Egg Foo Young(Combo)">Chicken Egg Foo Young</option>
+                                <option value="Roast Pork Egg Foo Young(Combo)">Roast Pork Egg Foo Young</option>
+                            </select>
+                        </div>
+
+                        <div id="combo_c11" style="display: none;">
+                            <select name="combo-c11" id="combo11" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="Chicken Lo Mein(Combo)">Chicken Lo Mein</option>
+                                <option value="Roast Pork Lo Mein(Combo)">Roast Pork Lo Mein</option>
+                            </select>
+                        </div>
+
+                        <div id="combo_c12" style="display: none;">
+                            <select name="combo-c12" id="combo12" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="🌶 Chicken w.Garlic Sauce(Combo)">Chicken w.Garlic Sauce</option>
+                                <option value="🌶 Roast Pork w.Garlic Sauce(Combo)">Roast Pork w.Garlic Sauce</option>
+                            </select>
+                        </div>
+
+                        <div id="combo_c13" style="display: none;">
+                            <select name="combo-c13" id="combo13" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="🌶 General Tso's Chicken(Combo)">General Tso's Chicken</option>
+                                <option value="🌶 Sesame Chicken(Combo)">Sesame Chicken</option>
+                            </select>
+                        </div>
+
+                        <div id="combo_c15" style="display: none;">
+                            <select name="combo-c15" id="combo15" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="Boneless Spare Ribs(Combo)">Boneless Spare Ribs</option>
+                                <option value="Boneless Spare Chicken(Combo)">Boneless Spare Chicken</option>
+                            </select>
+                        </div>
+
+                        <div id="combo_c16" style="display: none;">
+                            <select name="combo-c16" id="combo16" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="🌶 Hot & Spicy Shrimp(Combo)">Hot & Spicy Shrimp</option>
+                                <option value="🌶 Hot & Spicy Beef(Combo)">Hot & Spicy Beef</option>
+                            </select>
+                        </div>
+
+                        <div id="combo_c17" style="display: none;">
+                            <select name="combo-c17" id="combo17" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="Shrimp w.Broccoli(Combo)">Shrimp w.Broccoli</option>
+                                <option value="Beef w.Broccoli(Combo)">Beef w.Broccoli</option>
+                            </select>
+                        </div>
+
+                        <div id="combo_c18" style="display: none;">
+                            <select name="combo-c18" id="combo18" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="Shrimp Lo Mein(Combo)">Shrimp Lo Mein</option>
+                                <option value="Beef Lo Mein(Combo)">Beef Lo Mein</option>
+                            </select>
+                        </div>
+                        <div id="cf_rn" style="display: none;">
+                            <select name="cf_rn" id="chowfun_rn" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="Chow Fun">Chow Fun</option>
+                                <option value="Rice Noodles">Rice Noodles</option>
+                            </select>
+                        </div>
+
+                        <div id="item_num12">
+                            <select name="bbq_stick" id="bbq_stick" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="BBQ Satay Steak">BBQ Satay Steak</option>
+                                <option value="Chicken Stick">Chicken Stick</option>
+                            </select>
+                        </div>
+
+                        <div id="item_num11">
+                            <select name="dumpling" id="dumpling" style="font-size: x-large;
+                            font-weight: 400;
+                            border-top-width:
+                            1px;border-color: gray;
+                            border-radius: 5px;">
+                                <option value="Fried Dumpling">Fried Dumpling</option>
+                                <option value="Steamed Dumpling">Steamed Dumpling</option>
+                            </select>
+                        </div>
+
+                        <div class="quantity">
+                            <p>QUANTITY</p>
+                            <button class="btn btn-secondary minus_b" value="-" id="minus">-</button>
+                            <h1 id="count"> 1 </h1>
+                            <button class="btn btn-secondary add_b" id="add"><b>+</b></button>
+                        </div>
+
+                        <div class="s_price">
+                            <h3 id="price"></h3>
+                        </div>
+
+                        <div class="duo_size">
+                            <div class="pd">
+                                <div class="pt_Pdiv">
+                                    <input type="radio" name="duoSize" id="pt_price" value="pt" checked>
+                                    <label for="pt_price">
+                                        <h3 id="pt"></h3>
+                                    </label>
+                                </div>
+
+                                <div class="qt_Pdiv">
+                                    <input type="radio" name="duoSize" id="qt_price" value="qt">
+                                    <label for="qt_price">
+                                        <h3 id="qt"></h3>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lb_size">
+                            <label for="size">SIZE:</label>
+                            <select name="size" id="size" style="font-size: x-large; font-weight: 400;">
+                                <option value="pt">Pint</option>
+                                <option value="qt">Quart</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center">
+                            <input class="btn btn-secondary sub_b" onclick="addToCart('{{request.user.username}}')"
+                                id="addOrder" type="submit" value="Add">
+                        </div>
+                    </div>
+                </div>
+                {% else%}
+                {% endif %}
+                <div class="menu_div">
+                    <div id="appetizers_view">
+
+                        <div class="image_c">
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/appetizers/spring_r.jpg"
+                                    alt="spring_r">
+                                <div class="text-block">
+                                    <p>Spring Rolls</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/appetizers/cr.jpg"
+                                    alt="crab_ragoon">
+                                <div class="text-block">
+                                    <p>Crab Ragoon</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/appetizers/bbq_rib.jpg"
+                                    alt="bbq_rib">
+                                <div class="text-block">
+                                    <p>BBQ Ribs</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/appetizers/dumpling.jpg"
+                                    alt="dumpling">
+                                <div class="text-block">
+                                    <p>Fried Dumpling</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Appetizers</h1>
+                        </div>
+
+                        <div class="menu_item">
+
+                            {% for appetizer in appetizers %}
+                            <div class="item" id="item{{appetizer.id}}" onclick="loadCart('{{ appetizer.id }}')">
+
+                                {% if appetizer.description == None %}
+                                <div class="item_name">
+                                    <p id="ap_num_name{{appetizer.id}}">{{appetizer.item_num}}. {{appetizer.name}}</p>
+                                </div>
+                                {% else %}
+                                <div class="item_name">
+                                    <p style="margin: 1em 0px 0xp 0px ; margin-bottom: 0px; display: block;">
+                                        {{appetizer.item_num}}.{{appetizer.name}}</p>
+                                    <p style=" margin: 0px 0px 1em 0px ;">&nbsp; &nbsp;{{appetizer.description}}</p>
+                                </div>
+                                {% endif %}
+
+                                {% if appetizer.price is None and appetizer.id != 8 and appetizer.id != 11  %}
+                                <div class="item_price">
+                                    <p>(S) ${{appetizer.pt_price}} &nbsp; (L) ${{appetizer.qt_price}}</p>
+                                </div>
+
+                                {% elif appetizer.id == 8 %}
+                                <div class="item_price">
+                                    <p>(8) ${{appetizer.pt_price}} &nbsp; (16) ${{appetizer.qt_price}}</p>
+                                </div>
+
+                                {% elif appetizer.id == 11 %}
+                                <div class="item_price">
+                                    <p>(15) ${{appetizer.pt_price}} &nbsp; (30)
+                                        ${{appetizer.qt_price}}</p>
+                                </div>
+
+                                {% else%}
+                                <div class="item_price">
+                                    <p id="1size{{appetizer.id}}">${{appetizer.price}}</p>
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="soups_view">
+
+                        <div class="image_c">
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/soups/eds.jpg" alt="Egg Drop Soup">
+                                <div class="text-block">
+                                    <p>Egg Drop Soup</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/soups/cns.jpg"
+                                    alt="Chicken Noodle Soup">
+                                <div class="text-block">
+                                    <p>Chicken Noodle Soup</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/soups/hnss.jpg"
+                                    alt="Hot & Sour Soup">
+                                <div class="text-block">
+                                    <p> 🌶   Hot & Sour Soup</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/soups/sfs.jpg" alt="Seafood Soup">
+                                <div class="text-block">
+                                    <p>Seafood Bean Cake Soup</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Soups</h1>
+                            <h5 style="text-align: center;">(with Fried Noodles)</h5>
+                        </div>
+
+                        <div class="menu_item">
+                            {% for soup in soups%}
+                            <div class="item" id="item{{soup.id}}" onclick="loadCart('{{ soup.id }}')">
+                                {% if soup.spicy == False %}
+                                <div class="item_name">
+                                    <p>{{ soup.item_num }}. {{soup.name}}</p>
+                                </div>
+
+                                {% else %}
+                                <div class="item_name">
+                                    <p>{{ soup.item_num }}.🌶 {{soup.name}} </p>
+                                </div>
+                                {% endif%}
+
+                                {% if soup.price == None %}
+                                <div class="item_price">
+                                    <p>(Pt) ${{soup.pt_price}} &nbsp; (Qt) ${{soup.qt_price}}</p>
+                                </div>
+
+                                {% else %}
+                                <div class="item_price">
+                                    <p>$ {{ soup.price }}</p>
+                                </div>
+                                {% endif%}
+
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <p style="text-align: center; margin-top: 2em;">🌶 Hot & Spicy</p>
+                    </div>
+
+
+                    <div id="chow_mein_view">
+
+                        <div class="image_c">
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/chow_mein/ccm.jpg"
+                                    alt="Chicken Chow Mein">
+                                <div class="text-block">
+                                    <p>Chicken Chow Mein</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/chow_mein/scm.jpg"
+                                    alt="Shrimp Chow Mein">
+                                <div class="text-block">
+                                    <p>Shrimp Chow Mein</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/chow_mein/hcm.jpg"
+                                    alt="House Special Chow Mein">
+                                <div class="text-block">
+                                    <p>House Special Chow Mein</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="catagory_head_bar">
+                            <h1>Chow Mein</h1>
+                            <h5 style="text-align: center;">(with White Rice & Fried Noodles)</h5>
+                        </div>
+
+                        <div class="menu_item">
+                            {% for c_m in c_ms%}
+                            <div class="item" id="item{{c_m.id}}" onclick="loadCart('{{ c_m.id }}')">
+                                {% if c_m.description == None %}
+                                <div class="item_name">
+                                    <p>{{c_m.item_num}}. {{c_m.name}}</p>
+                                </div>
+                                {% else %}
+                                <div class="item_name">
+                                    <p style="margin: 1em 0px 0xp 0px ; margin-bottom: 0px;">{{c_m.item_num}}.
+                                        {{c_m.name}}</p>
+                                    <p style=" margin: 0px 0px 1em 0px ;">&nbsp; &nbsp; &nbsp; {{c_m.description}} </p>
+                                </div>
+                                {% endif %}
+
+                                {% if c_m.price == None %}
+                                <div class="item_price">
+                                    <p> (Pt) ${{c_m.pt_price}} &nbsp; (Qt) ${{c_m.qt_price}}</p>
+                                </div>
+                                {% else %}
+                                <div class="item_price">
+                                    <p>${{c_m.price}} </p>
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+
+                    <div id="chop_suey_view">
+
+                        <div class="image_c">
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/chop_suey/vcs.jpg"
+                                    alt="vegetable chop suey">
+                                <div class="text-block">
+                                    <p>Vegetable Chop Suey</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/chop_suey/xcu.jpg"
+                                    alt="Chicken Chop Suey">
+                                <div class="text-block">
+                                    <p>Chicken Chop Suey</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/chop_suey/scs.jpg"
+                                    alt="Shrimp Chop Suey">
+                                <div class="text-block">
+                                    <p>Shrimp Chop Suey</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Chop Suey</h1>
+                            <h5 style="text-align: center;">(with Rice)</h5>
+                        </div>
+
+                        <div class="menu_item">
+                            {% for c_s in c_ss%}
+                            <div class="item" id="item{{c_s.id}}" onclick="loadCart('{{ c_s.id }}')">
+                                <div class="item_name">
+                                    <p>{{ c_s.item_num }}. {{c_s.name}}</p>
+                                </div>
+
+                                <div class="item_price">
+                                    <p> (Pt) ${{c_s.pt_price}} &nbsp; (Qt) ${{c_s.qt_price}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+
+                    <div id="fr_view">
+
+                        <div class="image_c">
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/friedrice/vfr.jpg" alt="veg fr">
+                                <div class="text-block">
+                                    <p>Vegetable Fried Rice</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/friedrice/cfr.jpg" alt="chicken fr">
+                                <div class="text-block">
+                                    <p>Chicken Fried Rice</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/friedrice/bbfr.jpg" alt="beef rf">
+                                <div class="text-block">
+                                    <p>Beef Fried Rice</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/friedrice/ycf.jpg"
+                                    alt="young chow fr">
+                                <div class="text-block">
+                                    <p>Young Chow Fried Rice</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Fried Rice</h1>
+                        </div>
+
+                        <div class="menu_item">
+                            {% for f_r in f_rs%}
+                            <div class="item" onclick="loadCart('{{ f_r.id }}')">
+                                <div class="item_name">
+                                    <p>{{ f_r.item_num }}. {{f_r.name}}</p>
+                                </div>
+
+                                <div class="item_price">
+                                    <p>(Pt) ${{f_r.pt_price}} &nbsp; (Qt) ${{f_r.qt_price}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+
+                    <div id="lo_mein_view">
+                        <div class="image_c">
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/lo_mein/plm.jpg" alt="pork lo mein">
+                                <div class="text-block">
+                                    <p>Pork Lo Mein</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/lo_mein/clm.jpg"
+                                    alt="chicken lo mein">
+                                <div class="text-block">
+                                    <p>Chicken Lo Mein</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/lo_mein/blm.png"
+                                    alt=" Beef Lo Mein">
+                                <div class="text-block">
+                                    <p>Beef Lo Mein</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/lo_mein/slm.jpg" alt="Hous lo mein">
+                                <div class="text-block">
+                                    <p>House Specil Lo Mein</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1> Lo Mein</h1>
+                            <h5 style="text-align: center;">(without Rice)</h5>
+                        </div>
+
+                        <div class="menu_item">
+
+                            {% for l_m in l_ms%}
+                            <div class="item" onclick="loadCart('{{ l_m.id }}')">
+                                {% if l_m.description == None %}
+                                <div class="item_name">
+                                    <p>{{l_m.item_num}}. {{l_m.name}}</p>
+                                </div>
+                                {% else %}
+                                <div class="item_name">
+                                    <p style="margin: 1em 0px 0xp 0px ; margin-bottom: 0px;">{{l_m.item_num}}.
+                                        {{l_m.name}}</p>
+                                    <p style=" margin: 0px 0px 1em 0px ;">&nbsp; &nbsp; &nbsp; {{l_m.description}} </p>
+                                </div>
+                                {% endif %}
+                                <div class="item_price">
+                                    <p>(Pt) ${{l_m.pt_price}} &nbsp; (Qt) ${{l_m.qt_price}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+
+                    <div id="beef_view">
+
+                        <div class="image_c">
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/beef/bnb2.jpg" alt="Beed with b">
+                                <div class="text-block">
+                                    <p>Beef w. Brocoli</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/beef/pswo.jpg"
+                                    alt="Pepper Steak w. Onions">
+                                <div class="text-block">
+                                    <p>Pepper Steak W. Onions</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/beef/bmv.jpg" alt="beef w, mix veg">
+                                <div class="text-block">
+                                    <p>Beef w. Mixed Vegetables</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/beef/bws.jpg"
+                                    alt="Beef w. Snow Peas">
+                                <div class="text-block">
+                                    <p>Beef w. Snow Peas</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Beef</h1>
+                            <h5 style="text-align: center;">(with Rice)</h5>
+                        </div>
+
+                        <div class="menu_item">
+
+                            {% for beef in beefs %}
+                            <div class="item" onclick="loadCart('{{ beef.id }}')">
+                                {% if beef.spicy == False %}
+
+                                <div class="item_name">
+                                    <p>{{ beef.item_num }}. {{beef.name}}</p>
+                                </div>
+
+                                {% else %}
+                                <div class="item_name">
+                                    <p>{{ beef.item_num }}.🌶 {{beef.name}} </p>
+                                </div>
+                                {% endif%}
+                                <div class="item_price">
+                                    <p> (Pt) ${{beef.pt_price}} &nbsp; (Qt) ${{beef.qt_price}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <p style="text-align: center; margin-top: 2em;">🌶 Hot & Spicy</p>
+                    </div>
+
+
+                    <div id="pork_view">
+
+                        <div class="image_c">
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/pork/pnb.jpg"
+                                    alt="Pork with brocoli">
+                                <div class="text-block">
+                                    <p>Roast Pork w. Brocoli</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/pork/pwm.jpg"
+                                    alt="Roast Pork w. Mushrooms">
+                                <div class="text-block">
+                                    <p>Roast Pork w. Mushrooms</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/pork/pwmv.jpg"
+                                    alt="pork w, mix veg">
+                                <div class="text-block">
+                                    <p>Roast Pork w. Mixed Vegetables</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/pork/pws.jpg"
+                                    alt="rost pork with s p">
+                                <div class="text-block">
+                                    <p>Roast Pork w. Snow Peas</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Pork</h1>
+                            <h5 style="text-align: center;">(with Rice)</h5>
+                        </div>
+
+                        <div class="menu_item">
+
+                            {% for pork in porks%}
+                            <div class="item" onclick="loadCart('{{ pork.id }}')">
+                                <div class="item_name">
+                                    <p>{{ pork.item_num }}. {{pork.name}}</p>
+                                </div>
+
+                                <div class="item_price">
+                                    <p>(Pt) ${{pork.pt_price}} &nbsp; (Qt) ${{pork.qt_price}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="chicken_view">
+
+                        <div class="image_c">
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/chicken/cnb.jpg"
+                                    alt="chicken broccli">
+                                <div class="text-block">
+                                    <p>Chicken w. Broccoli</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/chicken/cwbbs.jpg"
+                                    alt="chicken black bean sauce">
+                                <div class="text-block">
+                                    <p>Chicken w. Black Bean Sauce</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/chicken/mggp.jpg"
+                                    alt="chicken w. Mushrooms">
+                                <div class="text-block">
+                                    <p>Moo Goo Gai Pan</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/chicken/cmv.jpg"
+                                    alt="chicken w, mix veg">
+                                <div class="text-block">
+                                    <p>Chicken w. Mixed Vegetables</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Chicken</h1>
+                            <h5 style="text-align: center;">(with Rice)</h5>
+                        </div>
+
+                        <div class="menu_item">
+
+                            {% for chicken in chickens%}
+                            <div class="item" onclick="loadCart('{{ chicken.id }}')">
+                                {% if chicken.spicy == False %}
+                                <div class="item_name">
+                                    <p>{{ chicken.item_num }}. {{chicken.name}}</p>
+                                </div>
+
+                                {% else %}
+                                <div class="item_name">
+                                    <p>{{ chicken.item_num }}.🌶 {{chicken.name}} </p>
+                                </div>
+                                {% endif%}
+
+                                <div class="item_price">
+                                    <p>(Pt) ${{chicken.pt_price}} &nbsp; (Qt) ${{chicken.qt_price}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <p style="text-align: center; margin-top: 2em;">🌶 Hot & Spicy</p>
+                    </div>
+
+                    <div id="seafood_view">
+
+                        <div class="image_c">
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/seafood/swb.jpeg"
+                                    alt="Shrimp w. Brocoli">
+                                <div class="text-block">
+                                    <p>Shrimp w. Broccoli</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/seafood/swls2.jpg"
+                                    alt="Shrimp w. Lobster Sauce">
+                                <div class="text-block">
+                                    <p>Shrimp w. Lobster Sauce</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/seafood/sv.jpg"
+                                    alt="shrimp w, mix veg">
+                                <div class="text-block">
+                                    <p>Shrimp w. Mixed Vegetables</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/seafood/sws.jpg"
+                                    alt="Shrimp w. Snow Peas">
+                                <div class="text-block">
+                                    <p>Shrimp w. Snow Peas</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Seafood</h1>
+                            <h5 style="text-align: center;">(with Rice)</h5>
+                        </div>
+
+                        <div class="menu_item">
+
+                            {% for seafood in seafoods %}
+                            <div class="item" onclick="loadCart('{{ seafood.id }}')">
+
+                                {% if seafood.spicy == False %}
+                                <div class="item_name">
+                                    <p>{{ seafood.item_num }}. {{seafood.name}}</p>
+                                </div>
+
+                                {% else %}
+                                <div class="item_name">
+                                    <p>{{ seafood.item_num }}. 🌶 {{seafood.name}} </p>
+                                </div>
+                                {% endif%}
+
+                                <div class="item_price">
+                                    <p>(Pt) ${{seafood.pt_price}} &nbsp; (Qt) ${{seafood.qt_price}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <p style="text-align: center; margin-top: 2em;">🌶 Hot & Spicy</p>
+                    </div>
+
+                    <div id="s_s_view">
+
+                        <div class="image_c">
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/sweet_sour/snsc.jpg"
+                                    alt="sweet_sour chicken">
+                                <div class="text-block">
+                                    <p>Sweet & Sour Chicken</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/sweet_sour/snsp.jpg"
+                                    alt="sweet_sour pork">
+                                <div class="text-block">
+                                    <p>Sweet & Sour Pork</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/sweet_sour/snss.jpg"
+                                    alt="sweet_sourshrimp">
+                                <div class="text-block">
+                                    <p>Sweet & Sour Shrimp</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Sweet & Sour</h1>
+                            <h5 style="text-align: center;">(with Rice)</h5>
+                        </div>
+
+                        <div class="menu_item">
+
+                            {% for sns in snss %}
+                            <div class="item" onclick="loadCart('{{ sns.id }}')">
+
+                                {% if sns.description == None %}
+                                <div class="item_name">
+                                    <p>{{sns.item_num}}. {{sns.name}}</p>
+                                </div>
+                                {% else %}
+                                <div class="item_name">
+                                    <p style="margin: 1em 0px 0xp 0px ; margin-bottom: 0px;">
+                                        {{sns.item_num}}.{{sns.name}}</p>
+                                    <p style=" margin: 0px 0px 1em 0px ;">&nbsp; &nbsp; &nbsp;{{sns.description}}</p>
+                                </div>
+                                {% endif %}
+                                <div class="item_price">
+                                    <p>(Pt) ${{sns.pt_price}} &nbsp; (Qt) ${{sns.qt_price}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="vegetable_view">
+
+                        <div class="image_c">
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/vegetable/vd.jpg"
+                                    alt="Chicken Chow Mein">
+                                <div class="text-block">
+                                    <p>Vegetable Delights</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/vegetable/sp.jpg"
+                                    alt="Chicken Chow Mein">
+                                <div class="text-block">
+                                    <p>Stirred Fried Snow Peas</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/vegetable/bg.jpg"
+                                    alt="Shrimp Chow Mein">
+                                <div class="text-block">
+                                    <p> 🌶 Broccoli w. Garlic Sauce </p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/vegetable/ep.jpg"
+                                    alt="House Special Chow Mein">
+                                <div class="text-block">
+                                    <p>🌶 Eggplant w. Garlic Sauce</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Vegetable Dishes</h1>
+                            <h5 style="text-align: center;">(with Rice)</h5>
+                        </div>
+
+                        <div class="menu_item">
+
+                            {% for veg in vegs %}
+                            <div class="item" onclick="loadCart('{{ veg.id }}')">
+                                {% if veg.spicy == False %}
+                                <div class="item_name">
+                                    <p>{{ veg.item_num }}. {{veg.name}}</p>
+                                </div>
+
+                                {% else %}
+                                <div class="item_name">
+                                    <p>{{ veg.item_num }}. 🌶 {{veg.name}} </p>
+                                </div>
+                                {% endif%}
+
+                                <div class="item_price">
+                                    <p>$ {{ veg.price }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <p style="text-align: center; margin-top: 2em;">🌶 Hot & Spicy</p>
+                    </div>
+
+                    <div id="chow_fun_view">
+
+                        <div class="image_c">
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/chowfun_ricenoddle/vcf.jpg"
+                                    alt="Vegetable Chow Fun">
+                                <div class="text-block">
+                                    <p>Vegetable Chow Fun</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/chowfun_ricenoddle/bcf.jpeg"
+                                    alt="Beef Chow Fun">
+                                <div class="text-block">
+                                    <p>Beef Chow Fun</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/chowfun_ricenoddle/hsrn.jpg"
+                                    alt="House Specil Rice Noodles">
+                                <div class="text-block">
+                                    <p>House Specil Rice Noodles </p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/chowfun_ricenoddle/sgprn.jpg"
+                                    alt="Singapore Chow Main Fun">
+                                <div class="text-block">
+                                    <p> 🌶Singapore Chow Main Fun </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Chow Fun or Rice Noodles</h1>
+                            <h5 style="text-align: center;">(without Rice)</h5>
+                        </div>
+
+                        <div class="menu_item">
+                            {% for cf in cfs%}
+                            <div class="item" onclick="loadCart('{{ cf.id }}')">
+                                {% if cf.spicy == False %}
+                                <div class="item_name">
+                                    <p>{{ cf.item_num }}. {{cf.name}}</p>
+                                </div>
+
+                                {% else %}
+                                <div class="item_name">
+                                    <p>{{ cf.item_num }}.🌶 {{cf.name}} </p>
+                                </div>
+                                {% endif%}
+                                <div class="item_price">
+                                    <p>$ {{ cf.price }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <p style="text-align: center; margin-top: 2em;">🌶 Hot & Spicy</p>
+                    </div>
+
+                    <div id="canton_view">
+
+                        <div class="image_c">
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/specil_cantonese/shf.jpg"
+                                    alt="Happy Family">
+                                <div class="text-block">
+                                    <p>Happy Family</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/specil_cantonese/lmc.jpg"
+                                    alt="Lemon Chicken">
+                                <div class="text-block">
+                                    <p>Lemon Chicken</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/specil_cantonese/sfd.jpg"
+                                    alt="seafood delight">
+                                <div class="text-block">
+                                    <p>Seafood Delights</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/specil_cantonese/sgwt.jpg"
+                                    alt="Subgum Wonton">
+                                <div class="text-block">
+                                    <p>Subgum Wonton</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Chef's Specil</h1>
+                            <h1>Cantonese Dishes</h1>
+                            <h5 style="text-align: center;">(with Rice)</h5>
+                        </div>
+
+                        {% for canto in cantos %}
+                        <div class="item" onclick="loadCart('{{ canto.id }}')">
+
+                            <div class="s_item">
+                                <div class="item_num">
+                                    <p>{{ canto.item_num }}. &nbsp;</p>
+                                </div>
+
+                                {% if canto.description == None %}
+                                <div class="s_item_name">
+                                    <p style="margin-bottom: 0px;">{{ canto.name }}</p>
+                                </div>
+                                {%else%}
+                                <div class="s_item_name">
+                                    <p style="margin-bottom: 0px;">{{ canto.name }}</p>
+                                    <p>{{ canto.description }}</p>
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="s_item_price">
+                                <p>${{ canto.price }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div id="hunan_view">
+
+                        <div class="image_c">
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/seafood/swb.jpeg"
+                                    alt="Shrimp w. Brocoli">
+                                <div class="text-block">
+                                    <p>Shrimp w. Brocoli</p>
+                                </div>
+                            </div>
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/seafood/swls2.jpg"
+                                    alt="Shrimp w. Lobster Sauce">
+                                <div class="text-block">
+                                    <p>Shrimp w. Lobster Sauce</p>
+                                </div>
+                            </div>
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/seafood/sv.jpg"
+                                    alt="shrimp w, mix veg">
+                                <div class="text-block">
+                                    <p>Shrimp W. Mixed Vegetables</p>
+                                </div>
+                            </div>
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/seafood/sws.jpg"
+                                    alt="Shrimp w. Snow Peas">
+                                <div class="text-block">
+                                    <p>Shrimp w. Snow Peas</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Chef's Specil</h1>
+                            <h1>Szechuan & Hunan Dishes</h1>
+                            <h5 style="text-align: center;">(with Rice)</h5>
+                        </div>
+
+                        {% for hunan in hunans %}
+                        <div class="item" onclick="loadCart('{{ hunan.id }}')">
+                            {% if hunan.description == None and hunan.spicy == True %}
+                            <div class="item_name">
+                                <p>{{hunan.item_num}}. 🌶 {{hunan.name}}</p>
+                            </div>
+                            {% elif hunan.description == None and  hunan.spicy == False %}
+                            <div class="item_name">
+                                <p style="margin: 1em 0px 0xp 0px ; margin-bottom: 0px;">{{hunan.item_num}}.
+                                    {{hunan.name}}</p>
+                            </div>
+                            {% elif hunan.description != None and  hunan.spicy == False %}
+                            <div class="item_name">
+                                <p style="margin: 1em 0px 0xp 0px ; margin-bottom: 0px;">{{hunan.item_num}}.
+                                    {{hunan.name}}</p>
+                                <p style=" margin: 0px 0px 1em 35px ;"> {{hunan.description}}</p>
+                            </div>
+                            {% else %}
+                            <div class="item_name">
+                                <p style="margin: 1em 0px 0xp 0px ; margin-bottom: 0px;">{{hunan.item_num}}.🌶
+                                    {{hunan.name}}</p>
+                                <p style=" margin: 0px 0px 1em 53px ;"> {{hunan.description}}</p>
+                            </div>
+                            {% endif %}
+
+                            <div class="item_price">
+                                <p>${{hunan.price}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <p style="text-align: center; margin-top: 2em;">🌶 Hot & Spicy</p>
+                    </div>
+
+                    <div id="efy_view">
+
+                        <div class="image_c">
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/egg_foo_yong/vefy.jpg"
+                                    alt="Vegetable Egg Foo Young">
+                                <div class="text-block">
+                                    <p>Vegetable Egg Foo Young</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/egg_foo_yong/pefy.jpg"
+                                    alt="beef w, mix veg">
+                                <div class="text-block">
+                                    <p>Roast Pork Egg Foo Young</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/egg_foo_yong/hefy.jpg"
+                                    alt="House Specil Egg Foo Young">
+                                <div class="text-block">
+                                    <p>House Specil Egg Foo Young</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Egg Foo Young</h1>
+                            <h5 style="text-align: center;">(with Rice)</h5>
+                        </div>
+
+                        <div class="menu_item">
+
+                            {% for efy in efys %}
+                            <div class="item" onclick="loadCart('{{ efy.id }}')">
+                                {% if efy.description == None %}
+                                <div class="item_name">
+                                    <p>{{efy.item_num}}. {{efy.name}}</p>
+                                </div>
+                                {% else%}
+                                <div class="item_name">
+                                    <p style="margin: 1em 0px 0xp 0px ; margin-bottom: 0px;">{{efy.item_num}}.
+                                        {{efy.name}}
+                                    </p>
+                                    <p style=" margin: 0px 0px 1em 32px ;">{{efy.description}}</p>
+                                </div>
+                                {% endif %}
+                                <div class="item_price">
+                                    <p>${{efy.price}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="suggestions_view">
+
+                        <div class="image_c" style="justify-content: space-evenly;">
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/suggestions/snss.jpg"
+                                    alt="Shrimp & Scallops">
+                                <div class="text-block">
+                                    <p>Shrimp & Scallops</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/suggestions/bns.jpg"
+                                    alt="Beef & scallops">
+                                <div class="text-block">
+                                    <p>Beef & scallops</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Suggestions</h1>
+                            <h6 style="text-align: center;"> (All Mixed with Broccoli, Snow Peas, Black Mushroom & Baby
+                                Corn
+                                with rice)</h6>
+                        </div>
+
+                        <div class="menu_item">
+
+                            {% for sug in sugs%}
+                            <div class="item" onclick="loadCart('{{ sug.id }}')">
+                                <div class="item_name">
+                                    <p>{{ sug.item_num }}. {{sug.name}}</p>
+                                </div>
+
+                                <div class="item_price">
+                                    <p>${{ sug.price }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="combo_view">
+
+                        <div class="image_c">
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/combination_plates/bnbc.jpg"
+                                    alt="Beef w. Broccoli">
+                                <div class="text-block">
+                                    <p>Beef w. Broccoli</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/combination_plates/blrc.jpg"
+                                    alt="Boneless Spare Ribs">
+                                <div class="text-block">
+                                    <p>Boneless Spare Ribs</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/combination_plates/scc.jpg"
+                                    alt="Orange Chicken">
+                                <div class="text-block">
+                                    <p> 🌶 Orange Chicken</p>
+                                </div>
+                            </div>
+
+                            <div class="image_c_div">
+                                <img class="c_image" src="./static/image/menu_image/combination_plates/snscc.jpg"
+                                    alt="Sweet & Sour Chicken">
+                                <div class="text-block">
+                                    <p>Sweet & Sour Chicken</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catagory_head_bar">
+                            <h1>Combination Plates</h1>
+                            <h5 style="text-align: center;">(Served with Eggroll & Roast Pork Rice)</h5>
+                        </div>
+
+                        <div class="menu_item">
+
+                            {% for combo in combos %}
+                            <div class="item" onclick="loadCart('{{ combo.id }}')">
+                                {% if combo.spicy == False %}
+                                <div class="item_name">
+                                    <p>{{ combo.item_num }}. {{combo.name}}</p>
+                                </div>
+                                {% else %}
+                                <div class="item_name">
+                                    <p>{{ combo.item_num }}. 🌶 {{combo.name}}</p>
+                                </div>
+                                {% endif %}
+                                <div class="item_price">
+                                    <p>${{combo.price}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <p style="text-align: center; margin-top: 2em;">🌶 Hot & Spicy</p>
+                    </div>
+
+                    <div id="side_view">
+
+                        <div class="catagory_head_bar">
+                            <h1>Side Order</h1>
+                        </div>
+
+                        <div class="menu_item">
+                            {% for side in sides %}
+                            <div class="item" onclick="loadCart('{{ side.id }}')">
+                                <div class="item_name">
+                                    <p>{{side.name}}</p>
+                                </div>
+
+                                {% if side.price == None and side.id == 167 %}
+                                <div class="item_price">
+                                    <p>(Pt) ${{side.pt_price}} &nbsp; (Qt) ${{side.qt_price}}</p>
+                                </div>
+
+                                {% elif side.price == None and side.id == 168 %}
+                                <div class="item_price">
+                                    <p>(Sm) ${{side.pt_price}} &nbsp; (Lg) ${{side.qt_price}}</p>
+                                </div>
+
+                                {% else %}
+                                <div class="item_price">
+                                    <p>${{side.price}}</p>
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {% if user.is_authenticated %}
+            <div class="menu_right">
+
+
+                <h2 style="text-align: center;">
+                    <i class="fa" style="padding-top: 7px;
+                                        font-size: 1em;">&#xf07a;</i>
+                    <span class='badge badge-warning' id='lblCartCount'>{{carts|length}}</span>Your Cart
+                </h2>
+
+                <p style="text-align: center;"> Signed in as<b> {{request.user.username |capfirst}}</b>.</p>
+
+                <hr>
+                <div id="adding_box">
+                    {% if not carts %}
+                    <p>Your shopping cart is currently empty...</p>
+                    {% endif %}
+                    {% for cart in carts %}
+
+                    <div class="added_item">
+                        <p><i class='fas fa-times x' onclick="deleteCart('{{ cart.id }}')">
+                                {% if cart.item_size == " " %}
+                            </i> {{cart.quantity}} {{cart.item_name}} {{cart.item_size}}</p>
+                        {% else %}
+                        </i> {{cart.quantity}} {{cart.item_name}} ({{cart.item_size}})</p>
+                        {% endif %}
+                        <p>${{cart.total}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <hr>
+                <div class="calculation">
+                    <div class="st_div">
+                        <p>Sub Total:</p>
+                        <p id="stt">${{check.sub_total}}</p>
+                    </div>
+
+                    <div class="tax_div">
+                        <p>Tax:</p>
+                        <p id="tax">${{check.tax}}</p>
+                    </div>
+
+                    <div class="total_div">
+                        <p>Total:</p>
+                        <p id="t_t">${{check.final_total}}</p>
+                    </div>
+                </div>
+                <input class="btn btn-primary sub_b" style="width: -webkit-fill-available;
+                             background-color: gray;
+                             border-color: gray;
+                             margin-top: 1em;" type="submit"
+                       id="submit_order" onclick="placeOrder('{{ request.user.username }}')"value="Place Order">
+            </div>
+            {% else %}
+            <div class="menu_right">
+                <h6 style="text-align: center;"><i class="fas fa-user"></i> Not Sign in.</h6>
+                <h2 style="text-align: center;">Guest Check</h2>
+                <hr>
+                <div>
+                    <h6 style="text-align: center;"> Already have an account?</h6>
+                    <div style="text-align: center;"> <a href="{% url 'login' %}">Log In here.</a></div>
+                </div>
+
+                <hr>
+                <div class="calculation" style="margin-top: 100%;">
+                    <div class="st_div">
+                        <p>Sub Total:</p>
+                        <p>$0.00</p>
+                    </div>
+
+                    <div class="tax_div">
+                        <p>Tax:</p>
+                        <p>$0.00</p>
+                    </div>
+
+                    <div class="total_div">
+                        <p>Total:</p>
+                        <p>$0.00</p>
+                    </div>
+                </div>
+                <input class="btn btn-primary sub_b out" style="width: -webkit-fill-available;
+                             background-color: gray;
+                             border-color: gray;
+                             margin-top: 1em;" type="submit" value="Place Order">
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+
+    <script>
+        var myVar;
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 500);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
+    </script>
+
+
+
+    {% endblock %}
+
+    {% block script %}
+    {% if user.is_authenticated %}
+    <script src="{% static 'menu/add_cart.js' %}"></script>
+    <script src="{% static 'menu/delete_cart.js' %}"></script>
+    <script src="{% static 'menu/menu_view.js' %}"></script>
+    <script src="{% static 'menu/place_order.js' %}"></script>
+    {% else %}
+    <script src="{% static 'menu/add_cart.js' %}"></script>
+    <script src="{% static 'menu/logout_view.js' %}"></script>
+    {% endif %}
+    {% endblock %}

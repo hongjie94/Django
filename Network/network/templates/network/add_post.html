@@ -1,0 +1,41 @@
+{% extends "network/layout.html" %}
+
+{% block bg %}
+<style>
+    body {
+        background-image: url(../static/img/15.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        width: 100%;
+        height: auto;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="post_box" style="width: 50%;margin: 5em auto 0px auto;">
+    <div class="p_head p_h" style="margin: 3em auto; width: 22em;">
+        <h1>Add new Posts</h1>
+    </div>  
+        <div class="post_from">
+            <form action="{% url 'add_post' %}" method="post">
+            {% csrf_token %}
+                <textarea  class="form-control"  autofocus rows="10"  name="content" placeholder="Share your news..."
+                style= "background-color: white;">       
+                </textarea >
+                <div class="post_button_div">
+                    <div style="text-align:center;"> <input class="post_button" type="submit" value="Post"></div>
+                </div>
+               
+            </form>
+        </div>
+</div> 
+
+{% endblock %}
+
+{% block footer %}
+<div class="index_footer">
+{% endblock %}

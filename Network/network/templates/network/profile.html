@@ -1,0 +1,108 @@
+{% load static %}
+
+ <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Profile{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'network/profile.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="{% static 'network/script.js' %}"></script>
+    </head>
+    <body id="p_b">
+        <div class="profile_page">
+            <h3><a href="{% url 'all_post' %}" style="background-color: #E6E6E5;
+                padding: 15px;
+                margin-top: 10px;
+                border-radius: 15px;">🔙go back</a></h3>
+            <div class="p_box">
+                <div class="p_info">
+                    <img src="../static/img/66.png" alt="profile" style="width:100%; border-radius: 50%;">
+                    <hr>
+                    <p>{{publisher |title}}</p>
+                    <p>{{counts}} Posts</p>
+                    <p>{{followers}} Followers</p>
+                    <p>{{following}} Following </p>
+
+                    {% if user.is_authenticated and user != publisher %}
+                    <hr>
+
+                    <form style="display: inline-block;" action="{% url 'profile' publisher.id %}" method="post">
+                            {% csrf_token %}
+                            {% if submit_b == "Follow" %}
+                                <button type="submit" class="btn a_a" style="background-color: #4AC3E0; border-color: #4AC3E0;"
+                                        name="submit_b" value="Follow">Follow</button>
+                            {% else %}
+                                <button type="submit" class="btn btn-danger" name="submit_b" value="Unfollow">Unfollow</button>
+                            {% endif %}
+                    </form>
+
+                    {% endif %}
+                 
+                </div>
+                
+                <div class="myp_box" style="
+                background-color: transparent;">
+
+                    <div class="p_head p_h">
+                        <h1>{{publisher |title}}'s Posts [{{counts}}]</h1>
+                    </div>   
+                   
+
+                    {% for post in page.object_list %}
+                        <div class="post a">
+                            <div id="post_{{post.id}}">{{ post.content }}</div>
+                            <hr style="margin: 0.5em 0px 0px 0px;border-top: 2px solid black;color: black;">
+                            <textarea class="form-control"  id="edit_{{post.id}}" name="edit" style="display:none; margin: 0.5em 0px 0px 0px; "></textarea>
+                            {% if user.id == post.user.id %}
+                            <div id="edit" onclick="edit('{{ post.id }}')" ><span class="edit_span">✏️Edit</span></div>
+                            {% endif %}
+                            <button id="edit_b{{post.id}}" class="btn btn-primary" style="display:none; background-color: #0E0E0E;
+                                                                                            border-color: #0E0E0E;
+                                                                                            margin: 1em 0px;">Save</button>
+                            <span id="like{{post.id}}"
+                                 class="fa fa-heart"
+                                 style="font-size:20px;
+                                 {% if post.number_likes == 0 %}
+                                color: gray;
+                                 {% else%}
+                                  color: red;
+                                 {% endif %}
+                                 background-color: transparent;
+                                 border-style: unset;"
+                                 onclick="like('{{ post.id }}')"></span>
+
+                            <div id="like_count{{post.id}}" style="display: inline-block;">{{ post.number_likes }}</div>
+                            <span style="float: right;">{{post.time_posted}}&nbsp;&nbsp;</span>
+                        </div> 
+                    {% endfor %}
+
+                    {% if page.has_previous or page.has_next %}
+                    <div class="pagination c">
+
+                        {% if page.has_next and not page.has_previous %}
+                            <p style="color: white; align-self: center;margin: 0px auto;">Click next to view more</p>
+                        {% endif %}
+
+                        {% if not page.has_next and page.has_previous %}
+                            <p style="color: white; align-self: center;margin: 0px auto;">You have reach the end of the page</p>
+                        {% endif %}
+
+                        {% if page.has_previous %}
+                            <a class="al" href="{% url 'profile' publisher.id %}?page={{ page.previous_page_number}}">⬅️ Previous</a>
+                        {% endif %}
+                        
+                    
+                        {% if page.has_next %}
+                            <a class="al"  href="{% url 'profile' publisher.id %}?page={{ page.next_page_number}}">Next ➡️</a>
+                        {% endif %} 
+                    </div>  
+                    {% endif %} 
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </body>   
+</html>
+

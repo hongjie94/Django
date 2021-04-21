@@ -1,0 +1,47 @@
+
+{% extends "menu/owner.html" %}
+{% load static %}
+
+{% block body %}
+<div style="margin-top: 5em;">
+    <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <div class="p-3 bg-white rounded shadow-sm">
+
+            <h3 class="border-bottom pb-2 mb-0" style="padding-bottom:1.5rem!important"> Order # {{num}} List
+            </h3>
+            {% for cart in carts %}
+            <div iclass="d-flex text-muted pt-3">
+                <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                    <div class="d-flex justify-content-between" style="margin-top: 1em;">
+                        <strong class="text-gray-dark">
+                            {% if cart.item_size == " "%}
+                            <h4 style="margin-top: 5px;">
+                                {{cart.quantity}} {{cart.item_name}} {{cart.item_size}}</h4>
+                            {% else %}
+                            <h4 style="margin-top: 5px;">
+                                {{cart.quantity}} {{cart.item_name}} ({{cart.item_size}})</h4>
+                            {%endif%}
+                        </strong>
+                        <div id="cb">
+                            <input type="checkbox" class="c" id="defaultCheckbox" name="orderCheck">
+                        </div>
+                    </div>
+                    <span class="d-block"> </span>
+                </div>
+            </div>
+            {% endfor %}
+            <div style="text-align: center; width: 100%">
+                <input class="btn btn-primary sub_b" style="width:50%;
+                        background-color: gray;
+                        border-color: gray;
+                        margin-top: 4em;"
+                       type="submit"
+                       id="order_ready"
+                       onclick="orderComplete({{num}})"
+                    value="ORDER READY"></div>
+        </div>
+
+    </div>
+    </main>
+</div>
+{% endblock %}
