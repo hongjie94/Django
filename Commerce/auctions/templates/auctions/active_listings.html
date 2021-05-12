@@ -55,7 +55,7 @@
 {% elif message_winner %}
   {% for i in bid %}
 {% for bids in i %}
-        <div class="alert">
+<div class="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
   <h6>{{message_winner}} {{bids.user|title}} with highest bid amount of ${{listings.current_bid}} </h6>
 </div>
@@ -64,7 +64,7 @@
 
 <!-- Message for comment -->
 {% elif message_c %}
-        <div class="alert">
+<div class="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
   <h6>{{message_c}}</h6>
 </div>
@@ -78,7 +78,7 @@
                 {% for bids in i %}
                 {% if message_winner %}
                 <div id="text_box">
-                     <h2 class ="l4"  style=" color:red;" >&nbsp;SOLD!</h2>
+                    <h2 class ="l4"  style=" color:red;" >&nbsp;SOLD!</h2>
                     <h5 class ="l1">&nbsp;Winner:{{bids.user|title}}</h5>
                     <h5 class ="l2">&nbsp;Bid Amount:${{listings.current_bid}}</h5>
                     <h5 class ="l3" style=" color:white;">&nbsp;{{bids.time_bade}}</h5>

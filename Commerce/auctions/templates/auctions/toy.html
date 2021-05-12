@@ -7,6 +7,7 @@
    <div class="head h_t"> <h2 class="text">Toys</h2> </div>
     <br>
       <div id="container">
+        <div class="listings_contaniner">
         {% for listing in listings %}
         <div class="listings">
             <div class="wrap_img" > <img class="listing_img" src="{{listing.image_url}}" alt="{{listing.id}}"> </div>
@@ -21,6 +22,7 @@
           </a>   
         </div>
         {% endfor %}
+        </div>
       </div>
     
       

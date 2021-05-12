@@ -1,3 +1,4 @@
+
 /* Logo in index*/
 .logo {
     text-align: center;
@@ -24,25 +25,31 @@
 
 /* Main container for all listing box in index page*/
 #container {
-    width:1000px; margin:auto; 
+    max-width:1000px; 
+    margin:auto; 
     height: auto;
    }
 
 
 /* Wrap each individual box in side container in index/activelisting page*/
+.listings_contaniner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
 .listings {
     width: 180px;
     height: 200px;
     margin: 10px;
-    float: left;
     background-color: #cd6b2b;
     border-radius: .25rem;
 }
 
-
 /* Over all listing texts */
 .listings_text {
-    width: 180px;
+    width: auto;
     height: 20px;
     text-align: center;
     font-size: 13px;
@@ -65,7 +72,6 @@
 
 }
 
-
 /* Add border style for over all images*/
 .listing_img {
     width: 180px;
@@ -78,7 +84,7 @@
 
 /* Sign status at top center of every pages*/
 .sign_in {
-
+    margin-top: 1em;
     text-align: center;
 }
 
@@ -91,7 +97,7 @@
     letter-spacing: normal;
     font-weight: 500;
     font-family: cursive;
-    margin: 0;
+    margin-bottom: 1.5em;
     box-shadow: 5px 20px 50px -5px rgb(188 88 20);
 }
 
